@@ -2,8 +2,9 @@
 
 :root {
     --bg-color: #a0b0c9;
-    --primary-color: #DDDDDD;
+    --primary-color: #dddddd;
     --secondary-color: #F05454;
+    --text-color: #000000;
     --font: "Nunito Sans", sans-serif;
 }
 
@@ -23,7 +24,7 @@ header {
 
 h1 {
     font-size: 2rem;
-    color: var(--bg-color);
+    color: var(--text-color);
     font-weight: 700;
 }
 
