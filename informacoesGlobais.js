@@ -18,33 +18,3 @@ async function vizualizarInformacoesGlobais() {
 }
 
 vizualizarInformacoesGlobais()
-
-
-    <script>
-        var ctx = document.getElementById('graficoInstagram').getContext('2d');
-        var graficoInstagram = new Chart(ctx, {
-            type: 'bar', // Tipo de gráfico
-            data: {
-                labels: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'], // Dias da semana
-                datasets: [{
-                    label: 'Horas por dia no Instagram',
-                    data: [3, 3, 3, 3, 3, 3, 3], // 3 horas por dia
-                    backgroundColor: 'rgba(0, 123, 255, 0.5)', // Cor das barras
-                    borderColor: 'rgba(0, 123, 255, 1)', // Cor das bordas
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true, // Começar o eixo Y do zero
-                        title: {
-                            display: true,
-                            text: 'Horas'
-                        }
-                    }
-                }
-            }
-        });
-    </script>
