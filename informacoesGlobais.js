@@ -26,7 +26,7 @@ vizualizarInformacoesGlobais()
                 labels: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'], // Dias da semana
                 datasets: [{
                     label: 'Horas por dia no Instagram',
-                    data: [3, 3, 3, 3, 3, 3, 3], // 3 horas por dia
+                    data: [3, 1, 3, 2, 3, 3, 3], // 3 horas por dia
                     backgroundColor: 'rgba(0, 123, 255, 0.5)', // Cor das barras
                     borderColor: 'rgba(0, 123, 255, 1)', // Cor das bordas
                     borderWidth: 1
