@@ -1,3 +1,5 @@
+console.log("O script.js foi carregado!");
+
 document.addEventListener("DOMContentLoaded", () => {
     // Dados reais
     const totalUsuarios = 615000000; // Total de usuários
