@@ -1,34 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Script carregado com sucesso!"); // Verificação
-  
-    // Dados de exemplo
+    // Dados reais
     const totalUsers = 615000000; // Total de usuários
-    const premiumUsers = 239000000; // Usuários premium
+    const premiumUsers = 239000000; // Usuários Premium
   
     // Atualiza os valores no resumo
     document.getElementById("total-users").textContent = totalUsers.toLocaleString();
     document.getElementById("premium-users").textContent = premiumUsers.toLocaleString();
   
-    // Dados para o gráfico
+    // Dados para o gráfico de barras
     const data = {
-      labels: ["Usuários Premium", "Usuários Gratuitos"],
+      labels: ["Premium Users", "Free Users"],
       datasets: [
         {
+          label: "Number of Users",
           data: [premiumUsers, totalUsers - premiumUsers],
-          backgroundColor: ["#1db954", "#535353"],
+          backgroundColor: ["#1db954", "#535353"], // Cores das barras
+          borderColor: ["#1db954", "#535353"], // Bordas das barras
+          borderWidth: 1,
         },
       ],
     };
   
-    // Configuração do gráfico
+    // Configuração do gráfico de barras
     const config = {
-      type: "doughnut", // Tipo de gráfico
+      type: "bar", // Alteração para o tipo de gráfico de barras
       data: data,
       options: {
         responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true, // Iniciar o eixo Y no zero
+          },
+        },
         plugins: {
           legend: {
-            position: "bottom",
+            display: false, // Esconde a legenda para gráficos simples
           },
         },
       },
