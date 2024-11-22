@@ -1,33 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Análise de Dados do Spotify Premium</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Usuários Globais do Spotify Premium</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Análise de Dados do Spotify Premium</h1>
-  </header>
-  
-  <main>
-    <section id="resumo">
-      <h2>Visão Geral dos Usuários Globais</h2>
-      <p>Total de Usuários: <span id="total-usuarios">0</span></p>
-      <p>Usuários Premium: <span id="usuarios-premium">0</span></p>
-    </section>
-    
-    <section id="container-grafico">
-      <canvas id="grafico-usuarios"></canvas>
-    </section>
-  </main>
-  
-  <footer>
-    <p>&copy; May</p>
-  </footer>
 
-  <script src="script.js"></script>
+    <h1>Análise de Usuários Globais do Spotify Premium</h1>
+
+    <p>Esta análise mostra a distribuição de usuários do Spotify Premium em diferentes regiões globais.</p>
+
+    <!-- Gráfico de barras -->
+    <canvas id="graficoUsuarios" width="400" height="200"></canvas>
+
+    <script>
+        // Dados de exemplo
+        const dadosUsuarios = {
+            labels: ['Brasil', 'Estados Unidos', 'México', 'Alemanha', 'França', 'Reino Unido'],
+            datasets: [{
+                label: 'Usuários do Spotify Premium (milhões)',
+                data: [10, 40, 15, 20, 10, 30], // Exemplos de dados
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        const configGrafico = {
+            type: 'bar',
+            data: dadosUsuarios,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Distribuição de Usuários do Spotify Premium por País'
+                    },
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        };
+
+        // Criação do gráfico
+        const ctx = document.getElementById('graficoUsuarios').getContext('2d');
+        const graficoUsuarios = new Chart(ctx, configGrafico);
+    </script>
+
 </body>
 </html>
