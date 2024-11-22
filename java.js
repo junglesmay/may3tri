@@ -1,36 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Example data
-    const totalUsers = 615000000;
-    const premiumUsers = 239000000;
+    console.log("Script carregado com sucesso!"); // Verificação
   
-    // Update text in the summary
+    // Dados de exemplo
+    const totalUsers = 615000000; // Total de usuários
+    const premiumUsers = 239000000; // Usuários premium
+  
+    // Atualiza os valores no resumo
     document.getElementById("total-users").textContent = totalUsers.toLocaleString();
     document.getElementById("premium-users").textContent = premiumUsers.toLocaleString();
   
-    // Chart data
+    // Dados para o gráfico
     const data = {
-      labels: ["Premium Users", "Free Users"],
-      datasets: [{
-        data: [premiumUsers, totalUsers - premiumUsers],
-        backgroundColor: ["#1db954", "#535353"],
-      }],
+      labels: ["Usuários Premium", "Usuários Gratuitos"],
+      datasets: [
+        {
+          data: [premiumUsers, totalUsers - premiumUsers],
+          backgroundColor: ["#1db954", "#535353"],
+        },
+      ],
     };
   
-    // Chart configuration
+    // Configuração do gráfico
     const config = {
-      type: "doughnut",
+      type: "doughnut", // Tipo de gráfico
       data: data,
       options: {
         responsive: true,
         plugins: {
           legend: {
-            position: 'bottom',
+            position: "bottom",
           },
         },
       },
     };
   
-    // Create chart
+    // Criação do gráfico
     const ctx = document.getElementById("user-chart").getContext("2d");
     new Chart(ctx, config);
   });
