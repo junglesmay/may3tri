@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Example data
-    const totalUsers = 500000000;
-    const premiumUsers = 210000000;
+    const totalUsers = 615000000;
+    const premiumUsers = 239000000;
   
     // Update text in the summary
     document.getElementById("total-users").textContent = totalUsers.toLocaleString();
