@@ -16,12 +16,12 @@ body {
     padding: 2rem;
   }
   
-  #summary {
+  #resumo {
     text-align: center;
     margin-bottom: 2rem;
   }
   
-  #chart-container {
+  #container-grafico {
     max-width: 600px;
     margin: 0 auto;
   }

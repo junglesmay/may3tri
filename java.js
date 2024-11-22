@@ -1,19 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Dados reais
-    const totalUsers = 615000000; // Total de usuários
-    const premiumUsers = 239000000; // Usuários Premium
+    const totalUsuarios = 615000000; // Total de usuários
+    const usuariosPremium = 239000000; // Usuários Premium
   
     // Atualiza os valores no resumo
-    document.getElementById("total-users").textContent = totalUsers.toLocaleString();
-    document.getElementById("premium-users").textContent = premiumUsers.toLocaleString();
+    document.getElementById("total-usuarios").textContent = totalUsuarios.toLocaleString();
+    document.getElementById("usuarios-premium").textContent = usuariosPremium.toLocaleString();
   
     // Dados para o gráfico de barras
-    const data = {
-      labels: ["Premium Users", "Free Users"],
+    const dados = {
+      labels: ["Usuários Premium", "Usuários Gratuitos"],
       datasets: [
         {
-          label: "Number of Users",
-          data: [premiumUsers, totalUsers - premiumUsers],
+          label: "Número de Usuários",
+          data: [usuariosPremium, totalUsuarios - usuariosPremium],
           backgroundColor: ["#1db954", "#535353"], // Cores das barras
           borderColor: ["#1db954", "#535353"], // Bordas das barras
           borderWidth: 1,
@@ -22,9 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   
     // Configuração do gráfico de barras
-    const config = {
-      type: "bar", // Alteração para o tipo de gráfico de barras
-      data: data,
+    const configuracao = {
+      type: "bar", // Tipo de gráfico
+      data: dados,
       options: {
         responsive: true,
         scales: {
@@ -41,6 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   
     // Criação do gráfico
-    const ctx = document.getElementById("user-chart").getContext("2d");
-    new Chart(ctx, config);
+    const ctx = document.getElementById("grafico-usuarios").getContext("2d");
+    new Chart(ctx, configuracao);
   });
